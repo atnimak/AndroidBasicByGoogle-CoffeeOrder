@@ -14,12 +14,30 @@
         android:layout_margin="16dp"
         android:text="QUANTITY"/>
 
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="incrementCoffee"
+        android:text="+"
+        android:textColor="@android:color/black"
+        android:textSize="16dp"/>
+
     <TextView
         android:id="@+id/quantity_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="16dp"/>
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="decrementCoffee"
+        android:text="-"
         android:textColor="@android:color/black"
         android:textSize="16dp"/>
 
