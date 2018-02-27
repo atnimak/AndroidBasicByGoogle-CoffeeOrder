@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int quantity = 1;
+    int quantity = 0;
     int price = 5;
 
     /**
