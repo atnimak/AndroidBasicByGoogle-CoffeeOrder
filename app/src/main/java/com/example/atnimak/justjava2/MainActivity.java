@@ -3,6 +3,7 @@ package com.example.atnimak.justjava2;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -20,13 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int price = 5;
-
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(quantity);
-        displayPrice("Total: "+quantity *price+"$\n"+"Thank you!");
+        //display(quantity);
+        if(!isWhippedCream()){
+            displayPrice("Name: Antonov Maxim\n"+"Quantity: "+quantity+"\nTotal: "+quantity *price+"$\n"+"Thank you!");
+        }else {
+            displayPrice("Name: Antonov Maxim\n"+"Quantity: "+quantity+"\nToppings: whipped cream"+"\nTotal: "+quantity *price+"$\n"+"Thank you!");
+        }
+
        // displayPrice(quantity *price);
     }
 
@@ -56,5 +61,10 @@ public class MainActivity extends AppCompatActivity {
     public void incrementCoffee(View view) {
         quantity++;
         display(quantity);
+    }
+
+    public boolean isWhippedCream() {
+        CheckBox checkBox = findViewById(R.id.checkBox);
+        return checkBox.isChecked();
     }
 }

@@ -6,6 +6,23 @@
     android:orientation="vertical"
     tools:context="com.example.atnimak.justjava2.MainActivity">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="TOPPINGS" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingLeft="24dp"
+        android:layout_marginLeft="16dp"
+        android:checked="false"
+        android:text="Whipped cream" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,5 +87,6 @@
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textSize="16dp" />
+
 
 </LinearLayout>
