@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 /**
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
+
+    int quantity = 0;
+    int price = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,37 +20,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int quantity = 0;
-    int price = 5;
-
-
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String totalOrder ="Antonov Maxim\n";
-        totalOrder+="Quantity: "+quantity+"\n";
-        totalOrder+="Total: "+quantity*price+"\n";
+        String totalOrder = "Antonov Maxim\n";
+        totalOrder += "Quantity: " + quantity + "\n";
+        totalOrder += "Total: " + quantity * price + "\n";
 
         String toppings = "";
-        if(isWhippedCream()){
-           toppings+="whipped cream";
+        if (isWhippedCream()) {
+            toppings += "whipped cream";
         }
 
-        if(isChokolate()){
-            if(isWhippedCream()){
-                toppings+=" and chocolate";
-            }else {
-                toppings+="chocolate";
+        if (isChokolate()) {
+            if (isWhippedCream()) {
+                toppings += " and chocolate";
+            } else {
+                toppings += "chocolate";
             }
         }
 
-        if(!isChokolate() && !isWhippedCream()){
-            toppings="no toppings";
+        if (!isChokolate() && !isWhippedCream()) {
+            toppings = "no toppings";
         }
 
-        totalOrder+="Toppings: "+toppings+"\n";
-        totalOrder+="Thank you!";
+        totalOrder += "Toppings: " + toppings + "\n";
+        totalOrder += "Thank you!";
 
         displayPrice(totalOrder);
     }
@@ -62,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    public void decrementCoffee(View view){
-        if(quantity>0) quantity--;
+    public void decrementCoffee(View view) {
+        if (quantity > 0) quantity--;
         display(quantity);
     }
 
