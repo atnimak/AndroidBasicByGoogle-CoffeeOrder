@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String totalOrder = "Antonov Maxim\n";
+        String totalOrder =configName()+"\n";
         totalOrder += "Quantity: " + quantity + "\n";
         totalOrder += "Total: " + quantity * price + "\n";
 
@@ -82,5 +83,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean isChokolate() {
         CheckBox checkBox = findViewById(R.id.chocolate);
         return checkBox.isChecked();
+    }
+
+    public String configName(){
+        EditText editText = (EditText) findViewById(R.id.editName);
+        String name = editText.getText().toString();
+        if(name.equals("")){
+            name = "Заказчик";
+        }
+        return name;
     }
 }
