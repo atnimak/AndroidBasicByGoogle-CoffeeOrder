@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String totalOrder =configName()+"\n";
+        String totalOrder = configName() + "\n";
         totalOrder += "Quantity: " + quantity + "\n";
         totalOrder += "Total: " + quantity * price + "\n";
 
@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
         return checkBox.isChecked();
     }
 
-    public String configName(){
+    public String configName() {
         EditText editText = (EditText) findViewById(R.id.editName);
         String name = editText.getText().toString();
-        if(name.equals("")){
+        if (name.equals("")) {
             name = "Заказчик";
         }
         return name;
