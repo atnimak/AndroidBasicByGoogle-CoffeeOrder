@@ -18,13 +18,23 @@
             android:text="TOPPINGS" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/whippedCream"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:checked="false"
             android:paddingLeft="24dp"
             android:text="Whipped cream"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/chocolate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:checked="false"
+            android:paddingLeft="24dp"
+            android:text="Chocolate"
             android:textSize="16sp" />
 
         <TextView
