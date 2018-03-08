@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decrementCoffee(View view) {
-        if (quantity > 0) quantity--;
+        if (quantity > 1) quantity--;
         display(quantity);
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void incrementCoffee(View view) {
-        quantity++;
+        if (quantity <100 ) quantity++;
         display(quantity);
     }
 
