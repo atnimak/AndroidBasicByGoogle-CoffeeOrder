@@ -25,20 +25,24 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String totalOrder = configName() + "\n";
+        int priceWithToppings = price;
+        String totalOrder = "Name: " + configName() + "\n";
         totalOrder += "Quantity: " + quantity + "\n";
-        totalOrder += "Total: " + quantity * price + "\n";
+
 
         String toppings = "";
         if (isWhippedCream()) {
             toppings += "whipped cream";
+            priceWithToppings++;
         }
 
         if (isChokolate()) {
             if (isWhippedCream()) {
                 toppings += " and chocolate";
+                priceWithToppings += 2;
             } else {
                 toppings += "chocolate";
+                priceWithToppings += 2;
             }
         }
 
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             toppings = "no toppings";
         }
 
+        totalOrder += "Total: " + quantity * priceWithToppings + "\n";
         totalOrder += "Toppings: " + toppings + "\n";
         totalOrder += "Thank you!";
 
