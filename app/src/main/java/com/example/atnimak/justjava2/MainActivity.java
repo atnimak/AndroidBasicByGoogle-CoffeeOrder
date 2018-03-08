@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        if(configName().equals("")){
+        if (configName().equals("")) {
             Toast.makeText(getApplicationContext(), "You have to write a name", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             int priceWithToppings = price;
             String name = configName();
             String totalOrder = "Name: " + name + "\n";
@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
             String[] adresses = {"order@givemecoffenow.com"};
             composeEmail(adresses, "Just coffee order for " + name, totalOrder);
         }
-
-        // displayPrice(totalOrder);
     }
 
     /**
@@ -86,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
     }
 
+    /*
+    We need not this code any more, we use an e-mail intent.
     private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
-    }
+    }*/
 
     public void incrementCoffee(View view) {
         if (quantity < 100) {
