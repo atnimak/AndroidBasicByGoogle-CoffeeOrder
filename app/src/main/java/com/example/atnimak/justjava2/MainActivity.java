@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 /**
  * This app displays an order form to order coffee.
  */
@@ -57,13 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 toppings = getString(R.string.notoppings);
             }
 
-            totalOrder += getString(R.string.total_sum, quantity * priceWithToppings);
+            // totalOrder += getString(R.string.total_sum, quantity * priceWithToppings);
+            totalOrder += getString(R.string.total_sum, NumberFormat.getCurrencyInstance().format(quantity * priceWithToppings));
             totalOrder += getString(R.string.toppings_sum, toppings);
             totalOrder += getString(R.string.thankU);
 
             String[] adresses = {getString(R.string.orderEmail)};
             composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
-           // displayPrice(totalOrder);
+            // displayPrice(totalOrder);
         }
     }
 
@@ -86,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // We need not this code any more, we use an e-mail intent.
-    private void displayPrice(String message) {
+    /*private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
-    }
+    }*/
 
     public void incrementCoffee(View view) {
         if (quantity < 100) {

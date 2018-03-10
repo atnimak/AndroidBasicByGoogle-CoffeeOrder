@@ -18,7 +18,8 @@
     <string name="andChocolate_sum">\u0020and chocolate</string>
     <string name="chocolate_sum">chocolate</string>
     <string name="notoppings">no toppings</string>
-    <string name="total_sum">Total:\u0020<xliff:g example="1" id="total_sum">%d</xliff:g>\n</string>
+
+    <string name="total_sum">Total:\u0020<xliff:g example="1" id="total_sum">%s</xliff:g>\n</string>
     <string name="toppings_sum">Toppings:\u0020<xliff:g example="chocolate" id="toppings_sum">%s</xliff:g>\n</string>
     <string name="thankU">Thank you!</string>
     <string name="justCoffeeFor">Just coffee order for\u0020</string>
