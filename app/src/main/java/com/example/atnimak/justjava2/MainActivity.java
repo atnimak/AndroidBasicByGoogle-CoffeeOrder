@@ -29,40 +29,41 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        if (configName().equals("")) {
-            Toast.makeText(getApplicationContext(), "You have to write a name", Toast.LENGTH_SHORT).show();
+        if (configName().trim().equals("")) {
+            Toast.makeText(getApplicationContext(), getString(R.string.toast_havetoWriteAname), Toast.LENGTH_SHORT).show();
         } else {
             int priceWithToppings = price;
             String name = configName();
-            String totalOrder = "Name: " + name + "\n";
-            totalOrder += "Quantity: " + quantity + "\n";
+            String totalOrder = getString(R.string.name, name);
+            totalOrder += getString(R.string.quantity_sum, quantity);
 
             String toppings = "";
             if (isWhippedCream()) {
-                toppings += "whipped cream";
+                toppings += getString(R.string.whipped_cream_sum);
                 priceWithToppings++;
             }
 
             if (isChokolate()) {
                 if (isWhippedCream()) {
-                    toppings += " and chocolate";
+                    toppings += getString(R.string.andChocolate_sum);
                     priceWithToppings += 2;
                 } else {
-                    toppings += "chocolate";
+                    toppings += getString(R.string.chocolate_sum);
                     priceWithToppings += 2;
                 }
             }
 
             if (!isChokolate() && !isWhippedCream()) {
-                toppings = "no toppings";
+                toppings = getString(R.string.notoppings);
             }
 
-            totalOrder += "Total: " + quantity * priceWithToppings + "\n";
-            totalOrder += "Toppings: " + toppings + "\n";
-            totalOrder += "Thank you!";
+            totalOrder += getString(R.string.total_sum, quantity * priceWithToppings);
+            totalOrder += getString(R.string.toppings_sum, toppings);
+            totalOrder += getString(R.string.thankU);
 
-            String[] adresses = {"order@givemecoffenow.com"};
-            composeEmail(adresses, "Just coffee order for " + name, totalOrder);
+            String[] adresses = {getString(R.string.orderEmail)};
+            //composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
+            displayPrice(totalOrder);
         }
     }
 
@@ -78,24 +79,23 @@ public class MainActivity extends AppCompatActivity {
         if (quantity > 1) {
             quantity--;
         } else {
-            Toast toast = Toast.makeText(getApplicationContext(), "You can`t have less than one cup", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.toast_lessOne), Toast.LENGTH_SHORT);
             toast.show();
         }
         display(quantity);
     }
 
-    /*
-    We need not this code any more, we use an e-mail intent.
+    // We need not this code any more, we use an e-mail intent.
     private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
-    }*/
+    }
 
     public void incrementCoffee(View view) {
         if (quantity < 100) {
             quantity++;
         } else {
-            Toast toast = Toast.makeText(getApplicationContext(), "You can`t have more than 100 cups", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.toast_more100), Toast.LENGTH_SHORT);
             toast.show();
         }
         display(quantity);

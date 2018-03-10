@@ -1,3 +1,28 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">JustJava2</string>
+    <string name="write_name">Write a name</string>
+    <string name="toppings">TOPPINGS</string>
+    <string name="whipped_cream">Whipped cream</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="quantity">QUANTITY</string>
+    <string name="order">Order</string>
+    <string name="toast_havetoWriteAname">You have to write a name</string>
+    <!--
+     Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
+     user's name. [CHAR LIMIT=NONE]
+   -->
+    <string name="name">Name:\u0020<xliff:g example="Amy" id="name">%s</xliff:g>\n</string>
+
+    <string name="quantity_sum">Quantity:\u0020<xliff:g example="1" id="quantity">%d</xliff:g>\n</string>
+    <string name="whipped_cream_sum">whipped cream</string>
+    <string name="andChocolate_sum">\u0020and chocolate</string>
+    <string name="chocolate_sum">chocolate</string>
+    <string name="notoppings">no toppings</string>
+    <string name="total_sum">Total:\u0020<xliff:g example="1" id="total_sum">%d</xliff:g>\n</string>
+    <string name="toppings_sum">Toppings:\u0020<xliff:g example="chocolate" id="toppings_sum">%s</xliff:g>\n</string>
+    <string name="thankU">Thank you!</string>
+    <string name="justCoffeeFor">Just coffee order for\u0020</string>
+    <string name="orderEmail">order@givemecoffenow.com</string>
+    <string name="toast_lessOne">You can`t have less than one cup</string>
+    <string name="toast_more100">You can`t have more than 100 cups</string>
 </resources>
