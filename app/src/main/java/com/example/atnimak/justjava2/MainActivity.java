@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             totalOrder += getString(R.string.thankU);
 
             String[] adresses = {getString(R.string.orderEmail)};
-            //composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
-            displayPrice(totalOrder);
+            composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
+           // displayPrice(totalOrder);
         }
     }
 
