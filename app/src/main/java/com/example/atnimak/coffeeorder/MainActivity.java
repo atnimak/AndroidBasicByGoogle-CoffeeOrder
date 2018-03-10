@@ -1,6 +1,5 @@
 package com.example.atnimak.coffeeorder;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,8 +9,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.atnimak.coffeeorder.R;
 
 import java.text.NumberFormat;
 
@@ -36,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        name="";
-        totalOrder="";
+        name = "";
+        totalOrder = "";
 
         if (configName().trim().equals("")) {
             Toast.makeText(getApplicationContext(), getString(R.string.toast_havetoWriteAname), Toast.LENGTH_SHORT).show();
@@ -74,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
             /*String[] adresses = {getString(R.string.orderEmail)};
             composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);*/
-             displayPrice(totalOrder);
-             orderChecked=true;
+            displayPrice(totalOrder);
+            orderChecked = true;
         }
     }
 
@@ -141,13 +138,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOrder(View view) {
-        if(orderChecked){
+        if (orderChecked) {
             orderChecked = false;
             String[] adresses = {getString(R.string.orderEmail)};
             composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
-            name="";
-            totalOrder="";
-        }else {
+            name = "";
+            totalOrder = "";
+        } else {
             Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.shoudOrder), Toast.LENGTH_SHORT);
             toast.show();
         }
