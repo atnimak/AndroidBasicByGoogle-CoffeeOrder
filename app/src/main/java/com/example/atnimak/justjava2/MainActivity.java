@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int price = 5;
+    boolean orderChecked = false;
+    String name = "";
+    String totalOrder = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,15 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        name="";
+        totalOrder="";
+
         if (configName().trim().equals("")) {
             Toast.makeText(getApplicationContext(), getString(R.string.toast_havetoWriteAname), Toast.LENGTH_SHORT).show();
         } else {
             int priceWithToppings = price;
-            String name = configName();
-            String totalOrder = getString(R.string.name, name);
+            name = configName();
+            totalOrder = getString(R.string.name, name);
             totalOrder += getString(R.string.quantity_sum, quantity);
 
             String toppings = "";
@@ -64,9 +70,10 @@ public class MainActivity extends AppCompatActivity {
             totalOrder += getString(R.string.toppings_sum, toppings);
             totalOrder += getString(R.string.thankU);
 
-            String[] adresses = {getString(R.string.orderEmail)};
-            composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
-            // displayPrice(totalOrder);
+            /*String[] adresses = {getString(R.string.orderEmail)};
+            composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);*/
+             displayPrice(totalOrder);
+             orderChecked=true;
         }
     }
 
@@ -89,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // We need not this code any more, we use an e-mail intent.
-    /*private void displayPrice(String message) {
+    private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
-    }*/
+    }
 
     public void incrementCoffee(View view) {
         if (quantity < 100) {
@@ -129,5 +136,19 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    public void sendOrder(View view) {
+        if(orderChecked){
+            orderChecked = false;
+            String[] adresses = {getString(R.string.orderEmail)};
+            composeEmail(adresses, getString(R.string.justCoffeeFor) + name, totalOrder);
+            name="";
+            totalOrder="";
+        }else {
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.shoudOrder), Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
 }

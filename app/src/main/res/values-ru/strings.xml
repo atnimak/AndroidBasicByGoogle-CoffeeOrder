@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">JustJava2</string>
+    <string name="app_name">Заказ кофе</string>
     <string name="write_name">Введите имя</string>
     <string name="toppings">Топпинги</string>
     <string name="whipped_cream">Взбитые сливки</string>
@@ -26,4 +26,6 @@
     <string name="orderEmail">order@givemecoffenow.com</string>
     <string name="toast_lessOne">Вы не можете заказать меньше одной чашки</string>
     <string name="toast_more100">Вы не можете заказать больше 100 чашек</string>
+    <string name="sentOrder">ОТПРАВИТЬ ЗАКАЗ</string>
+    <string name="shoudOrder">Вы должны нажать ЗАКАЗАТЬ сначала</string>
 </resources>

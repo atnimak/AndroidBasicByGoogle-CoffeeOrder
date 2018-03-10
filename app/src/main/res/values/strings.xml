@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">JustJava2</string>
+    <string name="app_name">Coffee Order</string>
     <string name="write_name">Write a name</string>
     <string name="toppings">TOPPINGS</string>
     <string name="whipped_cream">Whipped cream</string>
@@ -26,4 +26,6 @@
     <string name="orderEmail">order@givemecoffenow.com</string>
     <string name="toast_lessOne">You can`t have less than one cup</string>
     <string name="toast_more100">You can`t have more than 100 cups</string>
+    <string name="sentOrder">SEND ORDER</string>
+    <string name="shoudOrder">You shoud click ORDER first</string>
 </resources>
