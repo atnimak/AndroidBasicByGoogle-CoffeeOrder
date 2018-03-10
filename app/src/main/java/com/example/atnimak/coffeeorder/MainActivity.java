@@ -1,4 +1,4 @@
-package com.example.atnimak.justjava2;
+package com.example.atnimak.coffeeorder;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.atnimak.coffeeorder.R;
 
 import java.text.NumberFormat;
 

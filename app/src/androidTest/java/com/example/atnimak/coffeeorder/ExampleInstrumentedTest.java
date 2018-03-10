@@ -1,4 +1,4 @@
-package com.example.atnimak.justjava2;
+package com.example.atnimak.coffeeorder;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
